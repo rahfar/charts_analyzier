@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vessel</title>
+</head>
+
+<body>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="vessel_id">Vessel id:</label><br>
+        <input type="text" id="vessel_id" name="vessel_id" value="{{vessel_id}}"><br><br>
+        <input type="submit">
+    </form>
+
+    {% if result %}
+        <ul>
+        {% for zone_id in result %}
+            <li>{{ zone_id }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+
+</html>
