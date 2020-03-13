@@ -1,0 +1,12 @@
+version: "3.6"
+services: 
+  db:
+    image: mdillon/postgis
+    network_mode: "host"
+    environment:
+      POSTGRES_PASSWORD: 123456
+  app:
+    build: ./charts_analyzier
+    network_mode: "host"
+    depends_on:
+      - db

@@ -13,7 +13,6 @@ def zone(request):
         result = set()
         for v in Vessel.objects.values_list('vessel_id').distinct():
             all_points = MultiPoint([Point([x.longitude, x.latitude]) for x in Vessel.objects.filter(vessel_id__exact=v[0])])
-            print(v[0])
             if all_points.intersects(zone.poly):
                 result.add(v[0])
         return render(request, 'zone/index.html', context={
