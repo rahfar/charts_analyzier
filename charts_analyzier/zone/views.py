@@ -10,11 +10,7 @@ def zone(request):
     if request.method == 'POST':
         zone_id = request.POST['zone_id']
         zone = Zone.objects.get(zone_id__exact=zone_id)
-        result = set()
-        for v in Vessel.objects.values_list('vessel_id').distinct():
-            all_points = MultiPoint([Point([x.longitude, x.latitude]) for x in Vessel.objects.filter(vessel_id__exact=v[0])])
-            if all_points.intersects(zone.poly):
-                result.add(v[0])
+        result = set(vessel.vessel_id for vessel in Vessel.objects.filter(point__intersects=zone.poly))
         return render(request, 'zone/index.html', context={
                 'zone_id':zone_id,
                 'result': result,

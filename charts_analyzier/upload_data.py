@@ -40,13 +40,12 @@ for path in glob.glob('data/charts_prj_data/charts_prj_vessel_tracks/*.csv'):
         for row in reader:
             vessel_list.append(Vessel(
                 timestamp = datetime.datetime.fromtimestamp(int(row[0]), timezone.get_current_timezone()),
-                longitude = float(row[1]),
-                latitude = float(row[2]),
                 vessel_id = int(row[3]),
-                vessel_name = row[4]
+                vessel_name = row[4],
+                point = Point((float(row[1]), float(row[2])))
             ))
         Vessel.objects.bulk_create(vessel_list)
     toc = time.perf_counter()
-    print(path, f'proceded in {datetime.timedelta(seconds=int(toc-tic))}')
+    print(path, f'proceeded in {datetime.timedelta(seconds=int(toc-tic))}')
 stop = time.perf_counter()
 print(f'TOTAL {datetime.timedelta(seconds=int(stop-start))}')
