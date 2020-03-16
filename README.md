@@ -5,7 +5,7 @@
 * docker-compose build
 * docker-compose up -d
 * docker-compose exec app python upload_data.py
-    * it takes about 3-5 minutes
+    * it takes about 15 minutes
 
 ## Usage
 * __task 1.b.i__ Zones crossed by the vessel
