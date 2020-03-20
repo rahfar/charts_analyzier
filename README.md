@@ -9,8 +9,8 @@
 
 ## Usage
 * __task 1.b.i__ Zones crossed by the vessel
-    * http://localhost:8000/vessel/
+    * http://172.16.238.11:8000/vessel/
     * Example Vessel id: 9183984  
 * __task 1.b.ii__ Vessels passing through the zone 
-    * http://localhost:8000/zone/
-    * Example Zone id: Zone_1
+    * http://172.16.238.11:8000/zone/
+    * Example Zone id: zone_1
