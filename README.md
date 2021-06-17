@@ -1,6 +1,6 @@
 ## Build instruction
-* git clone https://github.com/rahfar/Wartsila
-* cd Wartsila
+* git clone https://github.com/rahfar/charts_analyzier
+* cd charts_analyzier
 * download charts_prj_data.zip (from dropbox) to charts_analyzier/data/ and unarchive it (with same name and structure)
 * docker-compose build
 * docker-compose up -d
